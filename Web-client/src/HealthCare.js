@@ -1,6 +1,7 @@
 import web3 from './web3';
 
-const address = "0x29044ca950147a55ad4e6c8868f650713f932dd6";
+// This address needs to be updated after contract deployment
+const address = '0x88D72b6650ff085eD679948689DAB500771E710f';
 
 const abi = [
 	{
@@ -212,4 +213,5 @@ const abi = [
 	}
 ]
 
-export default new web3.eth.Contract(abi, address);
+const instance = new web3.eth.Contract(abi, address);
+export default instance;

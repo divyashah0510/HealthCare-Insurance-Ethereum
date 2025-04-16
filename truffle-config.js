@@ -15,4 +15,26 @@
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
   // to customize your Truffle configuration!
+  networks: {
+    development: {
+      host: "127.0.0.1",
+      port: 7545,
+      network_id: "*",
+      gas: 6721975, // Match Ganache's default gas limit
+      gasPrice: 20000000000, // 20 gwei
+      websockets: true
+    }
+  },
+  compilers: {
+    solc: {
+      version: "^0.8.0",    // Same as your contract pragma
+      settings: {
+        optimizer: {
+          enabled: true,
+          runs: 200
+        },
+        evmVersion: "london" // Specify EVM version
+      }
+    }
+  }
 };
